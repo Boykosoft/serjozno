@@ -78,7 +78,7 @@ func main() {
 		}
 	})
 
-	r.Run(":8081")
+	r.Run(":80")
 }
 
 func CORSMiddleware() gin.HandlerFunc {
