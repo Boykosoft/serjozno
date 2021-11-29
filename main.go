@@ -16,6 +16,9 @@ func main() {
 	}
 
 	r := gin.Default()
+	r.Use(CORSMiddleware())
+	r.Use(gin.Recovery())
+
 	cfg, err := config.LoadDefaultConfig(context.TODO(),
 		config.WithRegion("eu-central-1"),
 	)
@@ -27,7 +30,7 @@ func main() {
 	svc := dynamodb.NewFromConfig(cfg)
 	tableName := "Tests"
 
-	r.GET("/tests", func(c *gin.Context) {
+	r.GET("/api/tests", func(c *gin.Context) {
 		resp, err := svc.Scan(context.TODO(), &dynamodb.ScanInput{
 			TableName: &tableName,
 		})
@@ -44,7 +47,7 @@ func main() {
 		}
 	})
 
-	r.GET("/tests/:id", func(c *gin.Context) {
+	r.GET("/api/tests/:id", func(c *gin.Context) {
 		// Build the request with its input parameters
 		var test Test
 		if err := c.ShouldBindUri(&test); err != nil {
@@ -75,5 +78,21 @@ func main() {
 		}
 	})
 
-	r.Run(":80")
+	r.Run(":8081")
+}
+
+func CORSMiddleware() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+		c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
+		c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With")
+		c.Writer.Header().Set("Access-Control-Allow-Methods", "POST, OPTIONS, GET, PUT")
+
+		if c.Request.Method == "OPTIONS" {
+			c.AbortWithStatus(204)
+			return
+		}
+
+		c.Next()
+	}
 }
