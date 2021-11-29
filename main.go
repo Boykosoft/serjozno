@@ -7,6 +7,7 @@ import (
 	"github.com/aws/aws-sdk-go-v2/service/dynamodb/types"
 	"github.com/gin-gonic/gin"
 	"log"
+	"net/http"
 )
 
 func main() {
@@ -18,6 +19,16 @@ func main() {
 	r := gin.Default()
 	r.Use(CORSMiddleware())
 	r.Use(gin.Recovery())
+	r.LoadHTMLFiles("index.html")
+	r.Static("/style", "./style")
+	r.Static("/images", "./images")
+	r.Static("/App", "./App")
+
+	r.GET("/", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "index.html", gin.H{
+			"title": "Serjozno",
+		})
+	})
 
 	cfg, err := config.LoadDefaultConfig(context.TODO(),
 		config.WithRegion("eu-central-1"),
@@ -78,7 +89,7 @@ func main() {
 		}
 	})
 
-	r.Run(":80")
+	r.Run(":8081")
 }
 
 func CORSMiddleware() gin.HandlerFunc {
