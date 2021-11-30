@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+  <link rel="stylesheet" href="style/fontawesome.min.css" />
+  <link rel="stylesheet" href="style/solid.css" />
+  <link rel="stylesheet" href="style/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <title>ZNO</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__wrapper">
+      <div class="header__first">
+        <div class="header__logo">
+          <img src="images/logo.png" alt="logo" class="logo" />
+        </div>
+        <nav class="nav">
+          <ul class="nav__links" id="myTopnav">
+            <li><a href="#intro" class="nav__link">Головна</a></li>
+            <li>
+              <a href="#services" class="nav__link">Електронний кабінет</a>
+            </li>
+            <li><a href="#advantages" class="nav__link">FAQ</a></li>
+            <li><a href="#prices" class="nav__link">Контакти</a></li>
+            <li><a href="tests.html" class="nav__link">Тести</a></li>
+          </ul>
+
+          <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+              <span></span>
+            </label>
+
+            <ul class="menu__box">
+              <li>
+                <a class="menu__item" href="/howItWork">Електронний кабінет</a>
+              </li>
+              <!-- <li><a class="menu__item" href="/faq">FAQ</a></li> -->
+              <li>
+                <a class="menu__item" href="/terms">FAQ</a>
+              </li>
+              <li><a class="menu__item" href="/howItWork">Контакти</a></li>
+              <li><a class="menu__item" href="/howItWork">Тести</a></li>
+              <div class="menu__loc">
+                <p>Київ</p>
+                вул. Євгена Сверстюка, 17
+              </div>
+              <div class="menu__tel">
+                <p>Дзвоніть</p>
+                <a href="tel:+380965641377">+38 (096) 564 13 77</a>
+              </div>
+            </ul>
+          </div>
+
+
+        </nav>
+      </div>
+
+      <div class="header__info">
+        <div class="header__loc">
+          <p>Київ</p>
+          вул. Євгена Сверстюка, 17
+        </div>
+        <div class="header__tel">
+          <p>Дзвоніть</p>
+          <a href="tel:+380965641377">+38 (096) 564 13 77</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <section class="location">
+    <div class="container">
+      <h1 class="faq__title">
+        Як нас знайти
+      </h1>
+      <div class="location__info">
+        <div class="location__info__text">«СерйоZNO»​ — це шлях до Вашого успіху!</div>
+        <div class="location__loc">Київ, вул. Євгена Сверстюка, 17</div>
+        <a href="mailto:serjozno_200@ukr.net" class="location__mail">serjozno_200@ukr.net</a>
+        <a href="tel:+380965641377" class="location__tel">Телефон: +38 (096) 564 13 77</a>
+      </div>
+      <div class="location__wrapper">
+
+        <div class="location__first">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.5932173215447!2d30.60014161550227!3d50.448677195373996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cff16eb1d041%3A0x9644a348cd2c8c93!2sUkrstal%CA%B9resurs!5e0!3m2!1sru!2sua!4v1638280815155!5m2!1sru!2sua"
+            style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <div class="location__second">
+          <form action="/" class="main__form">
+            <input type="text" placeholder="Ім'я" class="form__text" />
+            <input type="text" placeholder="Email" class="form__text" />
+            <input type="text" placeholder="Телефон" class="form__text" />
+            <textarea name="message" id="form__area" placeholder="Повідомлення" class="form__area"></textarea>
+            <button class="contacts__submit">Відправити</button>
+          </form>
+        </div>
+
+
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__wrapper">
+        <div class="footer__text">2021 «СерйоZNO».</div>
+        <a href="tel:+380965641377" class="footer__tel">+38 (096) 564 13 77</a>
+        <a href="https://www.facebook.com/events/1743410185963556" class="footer__link"><img src="images/facebook.png"
+            alt="" /></a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="App/app.js"></script>
+</body>
+
+</html>

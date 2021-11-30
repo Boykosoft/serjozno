@@ -1,209 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"
-    />
-    <link rel="stylesheet" href="style/fontawesome.min.css" />
-    <link rel="stylesheet" href="style/solid.css" />
-    <link rel="stylesheet" href="style/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <title>ZNO</title>
-  </head>
-  <body>
-    <header class="header">
-      <div class="header__wrapper">
-        <div class="header__first">
-          <div class="header__logo">
-            <img src="images/logo.png" alt="logo" class="logo" />
-          </div>
-          <nav class="nav">
-            <ul class="nav__list">
-              <li><a href="#intro" class="nav__link">Головна</a></li>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="Description" content="Центр підготовки до ЗНО. Запишіться на безкоштовне пробне заняття! ">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+  <link rel="stylesheet" href="style/fontawesome.min.css" />
+  <link rel="stylesheet" href="style/solid.css" />
+  <link rel="stylesheet" href="style/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <title>ZNO</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__wrapper">
+      <div class="header__first">
+        <div class="header__logo">
+          <img src="images/logo.png" alt="logo" class="logo" />
+        </div>
+        <nav class="nav">
+          <ul class="nav__links" id="myTopnav">
+            <li><a href="#intro" class="nav__link">Головна</a></li>
+            <li>
+              <a href="#services" class="nav__link">Електронний кабінет</a>
+            </li>
+            <li><a href="#advantages" class="nav__link">FAQ</a></li>
+            <li><a href="#prices" class="nav__link">Контакти</a></li>
+            <li><a href="tests.html" class="nav__link">Тести</a></li>
+          </ul>
+
+          <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+              <span></span>
+            </label>
+
+            <ul class="menu__box">
               <li>
-                <a href="#services" class="nav__link">Електронний кабінет</a>
+                <a class="menu__item" href="/howItWork">Електронний кабінет</a>
               </li>
-              <li><a href="#advantages" class="nav__link">FAQ</a></li>
-              <li><a href="#prices" class="nav__link">Контакти</a></li>
-              <li><a href="tests.html" class="nav__link">Тести</a></li>
+              <!-- <li><a class="menu__item" href="/faq">FAQ</a></li> -->
+              <li>
+                <a class="menu__item" href="/terms">FAQ</a>
+              </li>
+              <li><a class="menu__item" href="/howItWork">Контакти</a></li>
+              <li><a class="menu__item" href="/howItWork">Тести</a></li>
+              <div class="menu__loc">
+                <p>Київ</p>
+                вул. Євгена Сверстюка, 17
+              </div>
+              <div class="menu__tel">
+                <p>Дзвоніть</p>
+                <a href="tel:+380965641377">+38 (096) 564 13 77</a>
+              </div>
             </ul>
-          </nav>
-        </div>
-
-        <div class="header__info">
-          <div class="header__loc">
-            <p>Київ</p>
-            вул. Євгена Сверстюка, 17
           </div>
-          <div class="header__tel">
-            <p>Дзвоніть</p>
-            <a href="tel:+380965641377">+38 (096) 564 13 77</a>
+
+
+        </nav>
+      </div>
+
+      <div class="header__info">
+        <div class="header__loc">
+          <p>Київ</p>
+          вул. Євгена Сверстюка, 17
+        </div>
+        <div class="header__tel">
+          <p>Дзвоніть</p>
+          <a href="tel:+380965641377">+38 (096) 564 13 77</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="intro" id="intro">
+    <div class="container">
+      <div class="intro__wrapper">
+        <div class="intro__first">
+          <h1 class="intro__title _animation hide_anim">СерйоZNO</h1>
+          <p class="_animation">
+            Підготовка до ЗНО. Без зайвих слів. <br />
+            Запишіться на безкоштовне пробне заняття!
+          </p>
+        </div>
+        <div class="intro__second">
+          <div class="intro__logo">
+            <img src="images/intro-logo.png" alt="intro" class="intro_logo" />
           </div>
         </div>
       </div>
-    </header>
+    </div>
+  </section>
 
-    <section class="intro" id="intro">
-      <div class="container">
-        <div class="intro__wrapper">
-          <div class="intro__first">
-            <h1 class="intro__title">СерйоZNO</h1>
-            <p>
-              Підготовка до ЗНО. Без зайвих слів. <br />
-              Запишіться на безкоштовне пробне заняття!
-            </p>
-          </div>
-          <div class="intro__second">
-            <div class="intro__logo">
-              <img src="images/intro-logo.png" alt="intro" class="intro_logo" />
-            </div>
+  <section class="contacts">
+    <div class="container">
+      <div class="contacts__wrapper">
+        <div class="contacts__first">
+          <form action="/" class="main__form">
+            <input type="text" placeholder="Ім'я" class="form__text" />
+            <input type="text" placeholder="Email" class="form__text" />
+            <input type="text" placeholder="Телефон" class="form__text" />
+            <textarea name="message" id="form__area" placeholder="Повідомлення" class="form__area"></textarea>
+            <button class="contacts__submit">Відправити</button>
+          </form>
+        </div>
+
+        <div class="contacts__second">
+          <div class="contacts__title _animation">
+            Задайте запитання або <br />
+            запишіться на пробне заняття
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="contacts">
-      <div class="container">
-        <div class="contacts__wrapper">
-          <div class="contacts__first">
-            <form action="/" class="main__form">
-              <input type="text" placeholder="Ім'я" class="form__text" />
-              <input type="text" placeholder="Email" class="form__text" />
-              <input type="text" placeholder="Телефон" class="form__text" />
-              <textarea
-                name="message"
-                id="form__area"
-                placeholder="Повідомлення"
-                class="form__area"
-              ></textarea>
-              <button class="contacts__submit">Відправити</button>
-            </form>
-          </div>
-
-          <div class="contacts__second">
-            <div class="contacts__title">
-              Задайте запитання або <br />
-              запишіться на пробне заняття
+  <section class="services">
+    <div class="container">
+      <h2 class="services__title">
+        Чому слід довірити підготовку до ЗНО нам
+      </h2>
+      <div class="services__wrapper">
+        <div class="services__item__col">
+          <div class="services__item__body _animation hide_anim" id="services1">
+            <div class="services__item__header">
+              <p>Досвідчена команда викладачів</p>
+              <img src="images/services1.svg" alt="teacher" />
+            </div>
+            <div class="services__item__text">
+              Кожен з наших викладачів має мінімум 4 роки досвіду підготовки
+              до ЗНО. Результат останнього ЗНО складає 195+ Викладачі формують
+              програму підготовки індивідуально під кожну групу згідно з
+              програмою ЗНО 2021-2022 років.
             </div>
           </div>
         </div>
+        <!--servies__col-->
+        <div class="services__item__col">
+          <div class="services__item__body _animation hide_anim" id="services2">
+            <div class="services__item__header">
+              <p>Сучасна комп'ютеризована підготовка</p>
+              <img src="images/services2.svg" alt="teacher" />
+            </div>
+            <div class="services__item__text">
+              Кожен учень отримає доступ до електронної бази знань аудіо- та
+              відеоматеріалів, для максимально швидкого та ефективного
+              навчання. Також у електронному кабінеті студент та його батьки
+              можуть стежити за відвідуванням та успішністю.
+            </div>
+          </div>
+        </div>
+        <!--servies__col-->
+        <div class="services__item__col">
+          <div class="services__item__body _animation hide_anim" id="services3">
+            <div class="services__item__header">
+              <p>Зручне розташування</p>
+              <img src="images/services3.png" alt="teacher" />
+            </div>
+            <div class="services__item__text">
+              5 хвилин пішки від метро Лівобережна. Зручна транспортна
+              розв'язка та освітлена дорога.
+            </div>
+          </div>
+        </div>
+        <!--servies__col-->
+        <div class="services__item__col">
+          <div class="services__item__body _animation hide_anim" id="services4">
+            <div class="services__item__header">
+              <p>Доступні ціни</p>
+              <img src="images/services4.png" id="services_img4" alt="teacher" />
+            </div>
+            <div class="services__item__text">
+              Ви витрачаєте гроші на Ваші знання, а не на наш маркетинг.
+              Завдяки цьому та гнучкій системі знижок формується мінімальна
+              ціна заняття.
+            </div>
+          </div>
+        </div>
+        <!--servies__col-->
       </div>
-    </section>
+      <h2 class="services__title">Наші предмети:</h2>
+    </div>
+  </section>
 
-    <section class="services">
-      <div class="container">
-        <h2 class="services__title">
-          Чому слід довірити підготовку до ЗНО нам
-        </h2>
-        <div class="services__wrapper">
-          <div class="services__item__col">
-            <div class="services__item__body">
-              <div class="services__item__header">
-                <p>Досвідчена команда викладачів</p>
-                <img src="images/services1.svg" alt="teacher" />
-              </div>
-              <div class="services__item__text">
-                Кожен з наших викладачів має мінімум 4 роки досвіду підготовки
-                до ЗНО. Результат останнього ЗНО складає 195+ Викладачі формують
-                програму підготовки індивідуально під кожну групу згідно з
-                програмою ЗНО 2021-2022 років.
-              </div>
-            </div>
-          </div>
-          <!--servies__col-->
-          <div class="services__item__col">
-            <div class="services__item__body">
-              <div class="services__item__header">
-                <p>Сучасна комп'ютеризована підготовка</p>
-                <img src="images/services2.svg" alt="teacher" />
-              </div>
-              <div class="services__item__text">
-                Кожен учень отримає доступ до електронної бази знань аудіо- та
-                відеоматеріалів, для максимально швидкого та ефективного
-                навчання. Також у електронному кабінеті студент та його батьки
-                можуть стежити за відвідуванням та успішністю.
-              </div>
-            </div>
-          </div>
-          <!--servies__col-->
-          <div class="services__item__col">
-            <div class="services__item__body">
-              <div class="services__item__header">
-                <p>Зручне розташування</p>
-                <img src="images/services3.png" alt="teacher" />
-              </div>
-              <div class="services__item__text">
-                5 хвилин пішки від метро Лівобережна. Зручна транспортна
-                розв'язка та освітлена дорога.
-              </div>
-            </div>
-          </div>
-          <!--servies__col-->
-          <div class="services__item__col">
-            <div class="services__item__body">
-              <div class="services__item__header">
-                <p>Доступні ціни</p>
-                <img src="images/services4.png" id="services4" alt="teacher" />
-              </div>
-              <div class="services__item__text">
-                Ви витрачаєте гроші на Ваші знання, а не на наш маркетинг.
-                Завдяки цьому та гнучкій системі знижок формується мінімальна
-                ціна заняття.
-              </div>
-            </div>
-          </div>
-          <!--servies__col-->
-        </div>
-        <h2 class="services__title">Наші предмети:</h2>
+  <section class="subjects">
+    <div class="subjects__wrapper">
+      <div class="subject" id="sebject1">
+        <img src="images/book.png" alt="book" />
+        <p>Українська мова та література</p>
       </div>
-    </section>
-
-    <section class="subjects">
-      <div class="subjects__wrapper">
-        <div class="subject" id="sebject1">
-          <img src="images/book.png" alt="book" />
-          <p>Українська мова та література</p>
-        </div>
-        <div class="subject" id="sebject2">
-          <img src="images/museum.png" alt="book" />
-          <p>Історія України</p>
-        </div>
-        <div class="subject" id="sebject3">
-          <img src="images/dictionary.png" alt="book" />
-          <p>Англійська мова</p>
-        </div>
-        <div class="subject" id="sebject4">
-          <img src="images/calculating.png" alt="book" />
-          <p>Математика</p>
-        </div>
+      <div class="subject" id="sebject2">
+        <img src="images/museum.png" alt="book" />
+        <p>Історія України</p>
       </div>
-    </section>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="footer__wrapper">
-          <div class="footer__text">2021 «СерйоZNO».</div>
-          <a href="tel:+380965641377" class="footer__tel"
-            >+38 (096) 564 13 77</a
-          >
-          <a
-            href="https://www.facebook.com/events/1743410185963556"
-            class="footer__link"
-            ><img src="images/facebook.png" alt=""
-          /></a>
-        </div>
+      <div class="subject" id="sebject3">
+        <img src="images/dictionary.png" alt="book" />
+        <p>Англійська мова</p>
       </div>
-    </footer>
+      <div class="subject" id="sebject4">
+        <img src="images/calculating.png" alt="book" />
+        <p>Математика</p>
+      </div>
+    </div>
+  </section>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="App/app.js"></script>
-  </body>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__wrapper">
+        <div class="footer__text">2021 «СерйоZNO».</div>
+        <a href="tel:+380965641377" class="footer__tel">+38 (096) 564 13 77</a>
+        <a href="https://www.facebook.com/events/1743410185963556" class="footer__link"><img src="images/facebook.png"
+            alt="" /></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="App/app.js"></script>
+</body>
+
 </html>
