@@ -1,12 +1,7 @@
 package main
 
 import (
-	"context"
-	"github.com/aws/aws-sdk-go-v2/config"
-	"github.com/aws/aws-sdk-go-v2/service/dynamodb"
-	"github.com/aws/aws-sdk-go-v2/service/dynamodb/types"
 	"github.com/gin-gonic/gin"
-	"log"
 	"net/http"
 )
 
@@ -19,7 +14,7 @@ func main() {
 	r := gin.Default()
 	r.Use(CORSMiddleware())
 	r.Use(gin.Recovery())
-	r.LoadHTMLFiles("index.html")
+	r.LoadHTMLFiles("index.html", "faq.html", "contacts.html")
 	r.Static("/style", "./style")
 	r.Static("/images", "./images")
 	r.Static("/App", "./App")
@@ -30,63 +25,16 @@ func main() {
 		})
 	})
 
-	cfg, err := config.LoadDefaultConfig(context.TODO(),
-		config.WithRegion("eu-central-1"),
-	)
-	if err != nil {
-		log.Fatalf("unable to load SDK config, %v", err)
-	}
-
-	// Using the Config value, create the DynamoDB client
-	svc := dynamodb.NewFromConfig(cfg)
-	tableName := "Tests"
-
-	r.GET("/api/tests", func(c *gin.Context) {
-		resp, err := svc.Scan(context.TODO(), &dynamodb.ScanInput{
-			TableName: &tableName,
+	r.GET("/faq", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "faq.html", gin.H{
+			"title": "FAQ",
 		})
-		if err != nil {
-			c.JSON(500, gin.H{
-				"error": err.Error(),
-				"data": nil,
-			})
-		} else {
-			c.JSON(200, gin.H{
-				"error": nil,
-				"data": resp.Items,
-			})
-		}
 	})
 
-	r.GET("/api/tests/:id", func(c *gin.Context) {
-		// Build the request with its input parameters
-		var test Test
-		if err := c.ShouldBindUri(&test); err != nil {
-			c.JSON(400, gin.H{
-				"error": err.Error(),
-				"data": nil,
-			})
-			return
-		}
-		resp, err := svc.GetItem(context.TODO(), &dynamodb.GetItemInput{
-			TableName: &tableName,
-			Key: map[string]types.AttributeValue{
-				"id": &types.AttributeValueMemberN{
-					Value: test.ID,
-				},
-			},
+	r.GET("/contacts", func(c *gin.Context) {
+		c.HTML(http.StatusOK, "contacts.html", gin.H{
+			"title": "Contacts",
 		})
-		if err != nil {
-			c.JSON(500, gin.H{
-				"error": err.Error(),
-				"data": nil,
-			})
-		} else {
-			c.JSON(200, gin.H{
-				"error": nil,
-				"data": resp.Item,
-			})
-		}
 	})
 
 	r.Run(":80")
