@@ -1,64 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"
-    />
-    <link rel="stylesheet" href="style/fontawesome.min.css" />
-    <link rel="stylesheet" href="style/solid.css" />
-    <link rel="stylesheet" href="style/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <title>ZNO</title>
-  </head>
-  <body>
-    <header class="header">
-      <div class="header__wrapper">
-        <div class="header__first">
-          <div class="header__logo">
-            <img src="images/logo.png" alt="logo" class="logo" />
-          </div>
-          <nav class="nav">
-            <ul class="nav__list">
-              <li><a href="#intro" class="nav__link">Головна</a></li>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="Description" content="Центр підготовки до ЗНО. Запишіться на безкоштовне пробне заняття! ">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+  <link rel="stylesheet" href="style/fontawesome.min.css" />
+  <link rel="stylesheet" href="style/solid.css" />
+  <link rel="stylesheet" href="style/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <title>СерйоZNO | Тести</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__wrapper">
+      <div class="header__first">
+        <a href="/" class="header__logo">
+          <img src="images/logo.png" alt="logo" class="logo" />
+        </a>
+        <nav class="nav">
+          <ul class="nav__links" id="myTopnav">
+            <li><a href="/" class="nav__link">Головна</a></li>
+            <li>
+              <a href="/" class="nav__link">Електронний кабінет</a>
+            </li>
+            <li><a href="/faq" class="nav__link">FAQ</a></li>
+            <li><a href="/contacts" class="nav__link">Контакти</a></li>
+            <li><a href="/tests" class="nav__link">Тести</a></li>
+          </ul>
+
+          <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+              <span></span>
+            </label>
+
+            <ul class="menu__box">
               <li>
-                <a href="#services" class="nav__link">Електронний кабінет</a>
+                <a class="menu__item" href="/">Електронний кабінет</a>
               </li>
-              <li><a href="#advantages" class="nav__link">FAQ</a></li>
-              <li><a href="#prices" class="nav__link">Контакти</a></li>
-              <li><a href="/tests" class="nav__link">Тести</a></li>
+              <!-- <li><a class="menu__item" href="/faq">FAQ</a></li> -->
+              <li>
+                <a class="menu__item" href="/fa1">FAQ</a>
+              </li>
+              <li><a class="menu__item" href="/contacts">Контакти</a></li>
+              <li><a class="menu__item" href="/tests">Тести</a></li>
+              <li class="menu__loc">
+                <p>Київ</p>
+                вул. Євгена Сверстюка, 17
+              </li>
+              <li class="menu__tel">
+                <p>Дзвоніть</p>
+                <a href="tel:+380965641377">+38 (096) 564 13 77</a>
+              </li>
             </ul>
-          </nav>
-        </div>
+          </div>
 
-        <div class="header__info">
-          <div class="header__loc">
-            <p>Київ</p>
-            вул. Євгена Сверстюка, 17
-          </div>
-          <div class="header__tel">
-            <p>Дзвоніть</p>
-            <a href="tel:+380965641377">+38 (096) 564 13 77</a>
-          </div>
+
+        </nav>
+      </div>
+
+      <div class="header__info">
+        <div class="header__loc">
+          <p>Київ</p>
+          вул. Євгена Сверстюка, 17
+        </div>
+        <div class="header__tel">
+          <p>Дзвоніть</p>
+          <a href="tel:+380965641377">+38 (096) 564 13 77</a>
         </div>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <section class="tests">
-      <div class="container">
-        <h1 class="section__title">Тести:</h1>
-        <div class="tests__wrapper" id="tests__wrapper"></div>
-      </div>
-    </section>
+  <a class="back_to_top" title="Наверх">
+    <img src="images/arrow-up.png" alt="up">
+  </a>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="App/app.js"></script>
-  </body>
+  <section class="tests">
+    <div class="container">
+      <h1 class="section__title">Тести:</h1>
+      <div class="tests__wrapper" id="tests__wrapper"></div>
+    </div>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="App/app.js"></script>
+</body>
+
 </html>

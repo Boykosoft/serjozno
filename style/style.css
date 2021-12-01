@@ -45,6 +45,37 @@ a {
   text-decoration: none;
 }
 
+.back_to_top {
+  position: fixed;
+  bottom: 80px;
+  right: 40px;
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  background: #fff;
+  color: #444;
+  cursor: pointer;
+  display: none;
+  border-radius: 50%;
+  padding: 15px;
+}
+.back_to_top img{
+  display: block;
+  width: 32px;
+  height: 40px;
+}
+.back_to_top:hover {
+  background: #e9ebec;
+}
+
+.back_to_top-show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 /*------------Header-------------*/
 
 .header {
