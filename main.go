@@ -1,8 +1,10 @@
 package main
 
 import (
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"strings"
 )
 
 func main() {
@@ -35,6 +37,35 @@ func main() {
 		c.HTML(http.StatusOK, "contacts.html", gin.H{
 			"title": "Contacts",
 		})
+	})
+
+	r.POST("/send-contact", func(c *gin.Context) {
+		url := "https://api.telegram.org/bot1030360985:AAFHslArEnqselI_DtJj7T87OBwt9l5IZgI/sendMessage"
+		method := "POST"
+		name := c.DefaultPostForm("name", "noname")
+		email := c.DefaultPostForm("email", "noemail")
+		phohe := c.DefaultPostForm("phohe", "nophohe")
+		text := c.DefaultPostForm("text", "notext")
+		payload := strings.NewReader(fmt.Sprintf(`{
+			"chat_id": "-646808773",
+			"text": "%s\n%s\n%s\n%s"
+		}`, name, email, phohe, text))
+
+		client := &http.Client {}
+		req, err := http.NewRequest(method, url, payload)
+
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+		req.Header.Add("Content-Type", "application/json")
+
+		res, err := client.Do(req)
+		if err != nil {
+			fmt.Println(err)
+		}
+		defer res.Body.Close()
+		c.JSON(http.StatusOK, gin.H{"success": true})
 	})
 
 	r.Run(":80")
