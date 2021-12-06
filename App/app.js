@@ -45,42 +45,42 @@ if (animItems.length > 0) {
 }
 
 document.addEventListener("DOMContentLoaded", function (event) {
-  loadTests();
+  //loadTests();
 });
 
-function loadTests() {
-  fetch("https://serjozno-z5p2m.ondigitalocean.app/api/tests")
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      let innerHTML = "";
-      let tests = data.data;
-      for (const [key, item] of Object.entries(tests)) {
-        innerHTML += `
-               
-                  <div class="test__item__col">
-                    <a href="1.html" class="test__link">
-                      <div class="test__item__body">
-                        <div class="test__name">${item.name.Value}</div>
-                      </div>
-                    </a>
-                  </div>
-              
-                `;
-        testId = item.id.Value;
+// function loadTests() {
+//   fetch("https://serjozno-z5p2m.ondigitalocean.app/api/tests")
+//     .then((response) => {
+//       return response.json();
+//     })
+//     .then((data) => {
+//       let innerHTML = "";
+//       let tests = data.data;
+//       for (const [key, item] of Object.entries(tests)) {
+//         innerHTML += `
 
-        document.getElementById("tests__wrapper").innerHTML = innerHTML;
-      }
-    })
+//                   <div class="test__item__col">
+//                     <a href="1.html" class="test__link">
+//                       <div class="test__item__body">
+//                         <div class="test__name">${item.name.Value}</div>
+//                       </div>
+//                     </a>
+//                   </div>
 
-    .catch(function (error) {
-      console.log(error);
-    });
-}
+//                 `;
+//         testId = item.id.Value;
+
+//         document.getElementById("tests__wrapper").innerHTML = innerHTML;
+//       }
+//     })
+
+//     .catch(function (error) {
+//       console.log(error);
+//     });
+// }
 
 
-(function() {
+(function () {
   'use strict';
 
   function trackScroll() {
@@ -107,3 +107,45 @@ function loadTests() {
   window.addEventListener('scroll', trackScroll);
   goTopBtn.addEventListener('click', backToTop);
 })();
+
+
+const myForm = document.getElementById('myForm')
+const formMail = document.getElementById('form__mail')
+const formName = document.getElementById('form__name')
+const formPhone = document.getElementById('form__phone')
+const formText = document.getElementById('form__area')
+
+myForm.addEventListener('submit', function (e) {
+
+  if (formMail.value != '') {
+    formMail.classList.remove('error')
+    e.preventDefault()
+
+    const formData = new FormData(this)
+
+
+    fetch("https://serjozno-z5p2m.ondigitalocean.app/send-contact", {
+      method: 'POST',
+      body: formData
+    })
+      .then((response) => {
+        return response.text();
+      })
+      .then((text) => {
+        console.log(text)
+        formName.value = ''
+        formMail.value = ''
+        formPhone.value = ''
+        formText.value = ''
+      })
+
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+  else {
+    formMail.classList.add('error')
+  }
+
+
+})

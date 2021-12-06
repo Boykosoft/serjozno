@@ -27,11 +27,11 @@
           <ul class="nav__links" id="myTopnav">
             <li><a href="/" class="nav__link">Головна</a></li>
             <li>
-              <a href="/" class="nav__link">Електронний кабінет</a>
+              <!-- <a href="/" class="nav__link">Електронний кабінет</a> -->
             </li>
             <li><a href="/faq" class="nav__link">FAQ</a></li>
             <li><a href="/contacts" class="nav__link">Контакти</a></li>
-            <li><a href="/tests" class="nav__link">Тести</a></li>
+            <!-- <li><a href="/tests" class="nav__link">Тести</a></li> -->
           </ul>
 
           <div class="hamburger-menu">
@@ -41,15 +41,15 @@
             </label>
 
             <ul class="menu__box">
-              <li>
-                <a class="menu__item" href="/">Електронний кабінет</a>
-              </li>
+              <!-- <li>
+                  <a class="menu__item" href="/">Електронний кабінет</a>
+                </li> -->
               <!-- <li><a class="menu__item" href="/faq">FAQ</a></li> -->
               <li>
-                <a class="menu__item" href="/fa1">FAQ</a>
+                <a class="menu__item" href="/faq">FAQ</a>
               </li>
               <li><a class="menu__item" href="/contacts">Контакти</a></li>
-              <li><a class="menu__item" href="/tests">Тести</a></li>
+              <!-- <li><a class="menu__item" href="/tests">Тести</a></li> -->
               <li class="menu__loc">
                 <p>Київ</p>
                 вул. Євгена Сверстюка, 17
@@ -102,12 +102,13 @@
         </div>
 
         <div class="location__second">
-          <form action="/" class="main__form">
-            <input type="text" placeholder="Ім'я" class="form__text" />
-            <input type="text" placeholder="Email" class="form__text" />
-            <input type="text" placeholder="Телефон" class="form__text" />
-            <textarea name="message" id="form__area" placeholder="Повідомлення" class="form__area"></textarea>
-            <button class="contacts__submit">Відправити</button>
+          <form action="/" class="main__form" id="myForm">
+            <input type="text" placeholder="Ім'я" class="form__text" name="name" id="form__name" />
+            <input type="text" placeholder="Email" class="form__text" name="email" id="form__mail" />
+            <input type="text" placeholder="Телефон" class="form__text" name="phone" id="form__phone" />
+            <textarea name="message" id="form__area" placeholder="Повідомлення" name='text'
+              class="form__area"></textarea>
+            <button class="contacts__submit" type="submit">Відправити</button>
           </form>
         </div>
 
